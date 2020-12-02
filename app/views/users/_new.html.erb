@@ -1,20 +1,21 @@
-<h4 class="text-center text-signup "> <b class= "text"> <%= t ".text_signup" %></b></h4>
-<div class="form">
-  <%= form_for(@user, url: users_path, remote: true ) do |f| %>
-    <%= f.label :email, class: "label label-required " %>
-    <%= f.text_field :email, class: "form-control form-input" %>
-    <%= render "shared/show_error", field: :email %>
-    <%= f.label :name, t(".name"), class: "label label-required " %>
-    <%= f.text_field :name, class: "form-control form-input" %>
-    <%= render "shared/show_error", field: :name %>
-    <%= f.label :password, t(".pass"), class: "label label-required " %>
-    <%= f.password_field :password, class: "form-control form-input" %>
-    <%= render "shared/show_error", field: :password %>
-    <%= f.label :password_confirmation, t(".pass_con"), class: "label label-required " %>
-    <%= f.password_field :password_confirmation, class: "form-control form-input" %>
-    <%= render "shared/show_error", field: :password_confirmation %>
-    <div class="modal-footer">
-      <%= f.submit t(".signup"), class: "btn btn-secondary btn-signup" %>
-    </div>
-  <% end %>
-</div>
+<!--<h4 class="text-center text-signup "> <b class= "text"> <%#= t ".text_signup" %></b></h4>-->
+<!--<div class="form">-->
+  <%#= form_for(User.new, url: new_user_path, remote: true ) do |f| %>
+    <%#= f.label :email, class: "label label-required " %>
+    <%#= f.text_field :email, class: "form-control form-input" %>
+    <%#= render "shared/show_error", field: :email %>
+    <%#= f.label :name, t(".name"), class: "label label-required " %>
+    <%#= f.text_field :name, class: "form-control form-input" %>
+    <%#= render "shared/show_error", field: :name %>
+    <%#= f.label :password, t(".pass"), class: "label label-required " %>
+    <%#= f.password_field :password, class: "form-control form-input" %>
+    <%#= render "shared/show_error", field: :password %>
+    <%#= f.label :password_confirmation, t(".pass_con"), class: "label label-required " %>
+    <%#= f.password_field :password_confirmation, class: "form-control form-input" %>
+    <%#= render "shared/show_error", field: :password_confirmation %>
+<!--    <div class="modal-footer">-->
+      <%#= f.submit t(".signup"), class: "btn btn-secondary btn-signup" %>
+<!--    </div>-->
+  <%# end %>
+<!--</div>-->
+<%#= render "registrations/new" %>

@@ -1,6 +1,12 @@
 class User < ApplicationRecord
-  USER_PERMIT = %i(email name address age password password_confirmation gender)
-                .freeze
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+  # USER_PERMIT = %i(email name address age password password_confirmation gender)
+  #               .freeze
+  USER_PERMIT = %i(email password password_confirmation)
+                  .freeze
   attr_accessor :remember_token, :activation_token
 
   has_many :comments, dependent: :destroy
@@ -19,10 +25,10 @@ class User < ApplicationRecord
     staff: 1,
     admin: 2
   }
-  validates :name, presence: true,
-            length: {maximum: Settings.user.validate.name_max}
-  validates :age, presence: true,
-            numericality: {only_integer: true, greater_than: Settings.inter}
+  # validates :name, presence: true,
+  #           length: {maximum: Settings.user.validate.name_max}
+  # validates :age, presence: true,
+  #           numericality: {only_integer: true, greater_than: Settings.inter}
   validates :email, presence: true,
             length: {maximum: Settings.user.validate.email_max},
             format: {with: URI::MailTo::EMAIL_REGEXP},
@@ -30,7 +36,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
             length: {minimum: Settings.user.validate.pass_min},
             allow_nil: true
-  has_secure_password
+
 
   before_save :downcase_email
   before_create :create_activation_digest

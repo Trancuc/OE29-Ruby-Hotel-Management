@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
     store_location
     flash[:danger] = t "global.please_login"
-    redirect_to login_url
+    redirect_to root_path
   end
 
   def user_params

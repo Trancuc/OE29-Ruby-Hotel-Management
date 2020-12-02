@@ -18,6 +18,10 @@ class RoomsController < ApplicationController
   end
 
   def get_star
-    @rate = current_user.rates.by_room_id(@room.id).first
+    if current_user
+      @rate = current_user.rates.by_room_id(@room.id).first
+    else
+      @rate = Rate.by_room_id(@room.id).first
+    end
   end
 end

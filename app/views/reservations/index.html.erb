@@ -29,7 +29,7 @@
         <div class="total-price"><%= t ".total" %> <span id ="total"></span><%= t ".vnd" %></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-mona" id= "book" data-dismiss="modal" data-user ="<%= current_user.id %>"><%= t ".book" %></button>
+        <button type="button" class="btn btn-mona" id= "book" data-dismiss="modal" data-user ="<%= current_user.id if current_user %>"><%= t ".book" %></button>
       </div>
     </div>
   </div>

@@ -1,7 +1,8 @@
 require "rails_helper"
 RSpec.describe Admin::BillsController , type: :controller do
   include_examples "index_examples"
-  let! (:bill){FactoryBot.create(:bill, user: user, status: "accept")}
+  let! (:bill){FactoryBot.create(:bill, user: user_admin, status: "accept")}
+  # let! (:bill2){FactoryBot.create(:bill)}
   let! (:booking){FactoryBot.create(:booking, bill: bill)}
 
   context "When normal user login" do
@@ -84,6 +85,7 @@ RSpec.describe Admin::BillsController , type: :controller do
         it "should assigns @bill" do
           expect(assigns(:bill).id).to eq bill.id
         end
+
       end
 
       context "when invalid param" do

@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   layout "reservations"
+  before_action :authenticate_user!
   def index
     @rooms = Room.valid_room(params[:checkin], params[:checkout])
                  .page(params[:page])

@@ -1,23 +1,23 @@
-<h4 class="text-center text-signup "> <b class= "text"> <%= t ".text_signup" %></b></h4>
-<div class="form">
-  <%= form_for :session, url: login_path, remote: true  do |f| %>
-    <%= f.label :email, class: "label label-required " %>
-    <%= f.text_field :email, class: "form-control form-input" %>
-    <%= f.label :password, t(".pass"), class: "label label-required " %>
-    <%= f.password_field :password, class: "form-control form-input" %>
-    <div class="flex">
-      <div class="form-check">
-        <%= f.label :remember_me, class: "checkbox inline form-check-label " do %>
-        <%= f.check_box :remember_me, class: " check_remember" %>
-        <span><%= t ".remember" %></span>
-        <% end %>
-      </div>
-      <div class="pass_reset">
-        <%= link_to "Reset password" ,"#" %>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <%= f.submit t(".signin"), class: "btn btn-secondary btn-signup" %>
-    </div>
-  <% end %>
-</div>
+<!--<h4 class="text-center text-signup "> <b class= "text"> <%#= t ".text_signup" %></b></h4>-->
+<!--<div class="form">-->
+  <%#= form_for :session, url: login_path, remote: true  do |f| %>
+    <%#= f.label :email, class: "label label-required " %>
+    <%#= f.text_field :email, class: "form-control form-input" %>
+    <%#= f.label :password, t(".pass"), class: "label label-required " %>
+    <%#= f.password_field :password, class: "form-control form-input" %>
+<!--    <div class="flex">-->
+<!--      <div class="form-check">-->
+        <%#= f.label :remember_me, class: "checkbox inline form-check-label " do %>
+        <%#= f.check_box :remember_me, class: " check_remember" %>
+<!--        <span><%#= t ".remember" %></span>-->
+        <%# end %>
+<!--      </div>-->
+<!--      <div class="pass_reset">-->
+        <%#= link_to "Reset password" ,"#" %>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="modal-footer">-->
+      <%#= f.submit t(".signin"), class: "btn btn-secondary btn-signup" %>
+<!--    </div>-->
+  <%# end %>
+<!--</div>-->

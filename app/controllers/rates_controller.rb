@@ -1,5 +1,5 @@
 class RatesController < ApplicationController
-  before_action :logged_in_user, only: :create
+  before_action :authenticate_user!, only: %i(create update)
   before_action :load_rate_by_id, only: :update
   before_action :find_room, only: %i(create update)
 

@@ -1,7 +1,7 @@
 <div>
-  <% if  @user.errors[field].present?  %>
+  <% if User.new.errors[field].present?  %>
     <ul id="list-unstyled">
-        <% @user.errors[field].each do |error| %>
+        <% User.new.errors[field].each do |error| %>
             <li class="red "><%= error %></li>
         <% end %>
     </ul>

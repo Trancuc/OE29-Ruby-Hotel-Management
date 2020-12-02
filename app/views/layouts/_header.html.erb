@@ -6,12 +6,16 @@
     <%= link_to t(".en"), locale: :en %>
     <%= link_to t(".vi"), locale: :vi %>
     <% if !logged_in? %>
-      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter1" >
-      <%= t ".signin" %>
-      </button>
-      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter">
-      <%= t ".signup" %>
-      </button>
+      <%= link_to t(".signup"), new_user_registration_path, class: "nav-link font-weight-bold" %>
+      <%= link_to t(".signin"), new_user_session_path, class: "nav-link font-weight-bold" %>
+
+
+<!--      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter1" >-->
+      <%#= t ".signin" %>
+<!--      </button>-->
+<!--      <button type="button" class="btn-pri" data-toggle="modal" data-target="#exampleModalCenter">-->
+      <%#= t ".signup" %>
+<!--      </button>-->
      <% end %>
   </div>
 </div>
